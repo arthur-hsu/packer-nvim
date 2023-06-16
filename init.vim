@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter' " git
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tell-k/vim-autopep8'
 Plug 'nathanaelkane/vim-indent-guides' " IndentGuides

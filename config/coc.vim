@@ -1,6 +1,7 @@
 " coc
 let g:coc_global_extensions = [
 \ 'coc-lists',
+"\ 'coc-git',
 \ 'coc-marketplace',
 \ 'coc-pyright',
 \ 'coc-vimlsp',
