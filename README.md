@@ -1,6 +1,5 @@
 # .vim
 
-<<<<<<< HEAD
 On windows add cmd in $HOME/AppData/Local/nvim
     cd
     mkdir \AppData\Local\nvim
