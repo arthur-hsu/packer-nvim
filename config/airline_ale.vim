@@ -12,6 +12,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Ale
+let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_enabled = 1
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1

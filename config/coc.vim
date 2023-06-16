@@ -49,3 +49,13 @@ function! s:show_documentation()
     call CocActionAsync('doHover')
   endif
 endfunction
+
+
+" Use C to open coc config
+function! SetupCommandAbbrs(from, to)
+  exec 'cnoreabbrev <expr> '.a:from
+        \ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
+        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfunction
+call SetupCommandAbbrs('C', 'CocConfig')
+

@@ -66,13 +66,15 @@ set buftype=""
 
 set nu rnu  " 啟用相對行術
 
-"source $HOME/nvim/config/YouCompleteMe.vim 
 source $HOME/nvim/config/coc.vim 
 source $HOME/nvim/config/rainbow.vim 
 source $HOME/nvim/config/cmd.vim
 source $HOME/nvim/config/multi_line.vim
 source $HOME/nvim/config/airline_ale.vim
 source $HOME/nvim/config/semshi.vim
+let g:coc_config_home = "~/nvim/config/"
+
+"source $HOME/nvim/config/YouCompleteMe.vim 
 "source $HOME/nvim/config/treesitter.vim
 "autocmd VimEnter :TSBufToggle highlight
 
