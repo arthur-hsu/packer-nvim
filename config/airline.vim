@@ -1,5 +1,4 @@
 "Airline
-" let g:airline_theme = "base16-spacemacs"
 let g:airline_powerline_fonts = 1
 set laststatus=2 "命令行為兩行
 " enable tabline
