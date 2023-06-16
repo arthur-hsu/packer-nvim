@@ -1,5 +1,11 @@
 # .vim
 
+cmd execute
+
+pip3 install neovim
+
+npm install neovim
+
 On windows add cmd in $HOME/AppData/Local/nvim
 
 cd
