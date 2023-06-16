@@ -1,9 +1,8 @@
-
 "移除搜尋結果
 command! H let @/=""
-nnoremap <F8> :let @/ = ""<CR> :GitGutterLineHighlightsToggle<CR>
+nnoremap <silent><F8> :let @/ = ""<CR> :GitGutterLineHighlightsToggle<CR>
 "yank current file's name
-nnoremap <leader>e :let @*=expand('%:t')
+nmap <silent> <leader>e :let @*=expand('%')<CR>
 
 "=====F9標記高亮所有搜尋結果=====
 let g:toggleHighlight = 1
@@ -20,7 +19,7 @@ function! ToggleHighlight(...)
 endfunction
 
 "高亮最後搜尋的文字
-map <f9> :call ToggleHighlight(1)<CR> :IndentGuidesToggle<CR> 
+map <silent><f9> :call ToggleHighlight(1)<CR> :IndentGuidesToggle<CR> 
 
 "遊標F10自動高亮
 let g:toggleCursorMoved = 1
@@ -37,36 +36,35 @@ function! ToggleCursorMoved(...)
 endfunction
 
 " nmap <f10> :autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))<cr>
-map <F10> :call ToggleCursorMoved(1)<CR>
+map <silent><F10> :call ToggleCursorMoved(1)<CR>
 
 
 
-vmap <C-c> y:Oscyank<cr>
-"autocmd BufNewFile,BufRead *.json set ft=javascript  
+vmap <silent><C-c> y:Oscyank<cr>
 
 
-imap <C-b> <esc><C-o>
-nmap <C-b> <C-o>
+imap <silent><C-b> <esc><C-o>
+nmap <silent><C-b> <C-o>
 
-nmap <C-s> <esc>:w!<CR>
-imap <C-s> <esc>:w!<CR>
-nmap <F2> : set nu! <CR>:set rnu!<CR>
-nmap <F3> :ALEToggle<CR>
-nnoremap <F4> :exec 'NERDTreeToggle' <CR>
-map <F5> :call CompileRun()<CR>
-map <F7> : UndotreeToggle<CR>
+nmap <silent><C-s> <esc>:w!<CR>
+imap <silent><C-s> <esc>:w!<CR>
+nmap <silent><F2> : set nu! <CR>:set rnu!<CR>
+nmap <silent><F3> :ALEToggle<CR>
+nnoremap <silent><F4> :exec 'NERDTreeToggle' <CR>
+map <silent><F5> :call CompileRun()<CR>
+map <silent><F7> : UndotreeToggle<CR>
 
 
 " 複製貼上到剪貼簿
-vnoremap <Leader>y "+y
-nmap <Leader>p "+p
+vnoremap <silent><Leader>y "+y
+nmap <silent><Leader>p "+p
 " 設定分屏
-nmap spl :set splitright<CR>:vsplit<CR>
-nmap spk :set splitbelow<CR>:split<CR>
-map <A-Right> :vertical resize-5 <CR> 
-map <A-Left> :vertical resize+5 <CR> 
-map <A-Up> :resize-5 <CR> 
-map <A-Down> :resize+5 <CR> 
+nmap <silent>spl :set splitright<CR>:vsplit<CR>
+nmap <silent>spk :set splitbelow<CR>:split<CR>
+map <silent><A-Right> :vertical resize-5 <CR> 
+map <silent><A-Left> :vertical resize+5 <CR> 
+map <silent><A-Up> :resize-5 <CR> 
+map <silent><A-Down> :resize+5 <CR> 
 
 
 func! CompileRun()
