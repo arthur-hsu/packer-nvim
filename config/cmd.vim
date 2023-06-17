@@ -1,10 +1,11 @@
 "移除搜尋結果
 command! H let @/=""
+" GIT diff
+command! Gdif GitGutterDiffOrig
 nnoremap <silent><F8> :let @/ = ""<CR> :GitGutterLineHighlightsToggle<CR>
-"yank current file's name
-nmap <silent> <leader>e :let @*=expand('%')<CR>
-
-"=====F9標記高亮所有搜尋結果=====
+" yank current file's name
+nmap <leader>e :let @*=expand('%')<CR>
+" =====F9標記高亮所有搜尋結果=====
 let g:toggleHighlight = 1
 function! ToggleHighlight(...)
     if a:0 == 1 "toggle behaviour
@@ -15,7 +16,6 @@ function! ToggleHighlight(...)
     else
         call  clearmatches()
     endif
-
 endfunction
 
 "高亮最後搜尋的文字

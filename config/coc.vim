@@ -1,6 +1,9 @@
 " coc
+let g:coc_config_home = "~/nvim/config/" " :C 可以直接進入coc-setting.json
 let g:coc_global_extensions = [
 \ 'coc-lists',
+"\ 'coc-python',
+\ 'coc-jedi',
 "\ 'coc-git',
 \ 'coc-marketplace',
 \ 'coc-pyright',
@@ -10,7 +13,7 @@ let g:coc_global_extensions = [
 set updatetime=300
 set signcolumn=yes
 
-autocmd ColorScheme * hi CocMenuSel ctermbg=237 guibg=#13354A
+autocmd ColorScheme * hi CocMenuSel ctermbg=237 guibg=#e9603c
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
 		\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

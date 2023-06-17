@@ -1,3 +1,4 @@
 {
-"inlayHint.enable": false
+    "jedi.enable": true,
+    "inlayHint.enable": false
 }
