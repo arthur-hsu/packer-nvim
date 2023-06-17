@@ -6,6 +6,9 @@ pip3 install neovim
 
 npm install neovim
 
+管理員執行
+pip install jedi-language-server
+
 On windows add cmd in $HOME/AppData/Local/nvim
 
 cd
