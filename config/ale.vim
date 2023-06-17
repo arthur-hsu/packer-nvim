@@ -12,7 +12,7 @@ let g:ale_sign_warning =    '🔰'
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 "在vim自帶的狀態列中整合ale
-let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+"let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
 "顯示Linter名稱,出錯或警告等相關資訊
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'

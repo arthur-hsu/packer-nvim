@@ -44,17 +44,16 @@ Plug 'https://github.com/MTDL9/vim-log-highlighting'
 Plug 'neoclide/jsonc.vim'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'https://github.com/vim-python/python-syntax'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main'  }
 "not enable
 "Plug 'ycm-core/YouCompleteMe'
 "Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
 "Plug 'sheerun/vim-polyglot'
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 syntax on                                     
-set nu rnu  " 啟用相對行術
+"set nu rnu  " 啟用相對行術
 set t_Co=256
 set termguicolors
 set background=dark "設置背景色
@@ -82,8 +81,9 @@ highlight GitGutterChangeLineNr guifg=LightMagenta
 highlight GitGutterDeleteLineNr guifg=lightred
 highlight GitGutterChangeDeleteLineNr guifg=lightred 
 
+lua require('init')
 
-source $HOME/nvim/config/coc.vim 
+"source $HOME/nvim/config/coc.vim 
 source $HOME/nvim/config/rainbow.vim 
 source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
 source $HOME/nvim/config/multi_line.vim
