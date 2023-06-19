@@ -37,13 +37,13 @@ Plug 'nathanaelkane/vim-indent-guides' " IndentGuides
 Plug 'luochen1990/rainbow' " 彩虹括號號
 Plug 'scrooloose/nerdcommenter' " 註解 \cc 取消註解 \cu
 Plug 'mg979/vim-visual-multi' " 多重光標
-Plug 'dense-analysis/ale' " 偵錯程式需要使用 pip 安裝 pip install pylint
+"Plug 'dense-analysis/ale' " 偵錯程式需要使用 pip 安裝 pip install pylint
 Plug 'https://github.com/fcpg/vim-osc52' " <C-c>遠端複製到本地
 Plug 'https://github.com/mbbill/undotree'
 Plug 'https://github.com/MTDL9/vim-log-highlighting'
 Plug 'neoclide/jsonc.vim'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
-Plug 'https://github.com/vim-python/python-syntax'
+"Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+"Plug 'https://github.com/vim-python/python-syntax'
 "not enable
 "Plug 'ycm-core/YouCompleteMe'
 "Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
@@ -53,7 +53,7 @@ Plug 'https://github.com/vim-python/python-syntax'
 call plug#end()
 
 syntax on                                     
-"set nu rnu  " 啟用相對行術
+set nu rnu  " 啟用相對行術
 set t_Co=256
 set termguicolors
 set background=dark "設置背景色
@@ -88,8 +88,8 @@ source $HOME/nvim/config/rainbow.vim
 source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
 source $HOME/nvim/config/multi_line.vim
 source $HOME/nvim/config/airline.vim
-source $HOME/nvim/config/ale.vim
-source $HOME/nvim/config/semshi.vim
+"source $HOME/nvim/config/ale.vim
+"source $HOME/nvim/config/semshi.vim
 source $HOME/nvim/config/nerdtree.vim
 source $HOME/nvim/config/indent.vim
 "source $HOME/nvim/config/YouCompleteMe.vim 
@@ -118,9 +118,9 @@ set fileformat=unix "設置以unix的格式保存文件
 set textwidth=200       " break lines when line length increases
 filetype indent on " 自适应不同语言的智能缩进
 set expandtab " 将制表符扩展为空格
-set tabstop=4 " 设置编辑时制表符占用空格数
-set shiftwidth=4 " 设置格式化时制表符占用空格数
-set softtabstop=4 " 让 vim 把连续数量的空格视为一个制表符
+"set tabstop=4 " 设置编辑时制表符占用空格数
+"set shiftwidth=4 " 设置格式化时制表符占用空格数
+"set softtabstop=4 " 让 vim 把连续数量的空格视为一个制表符
 let &t_ut='' " 將縮排定義為空格
 set smartindent
 set autoindent
