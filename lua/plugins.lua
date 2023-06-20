@@ -13,7 +13,8 @@ require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    use {'kdheepak/tabline.nvim'}
+    --use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     --------------------- LSP --------------------
     use("hrsh7th/nvim-cmp")
     -- for vsnip
