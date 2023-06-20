@@ -7,6 +7,13 @@ require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'HiPhish/nvim-ts-rainbow2' }
     use {'ray-x/lsp_signature.nvim'}
+    use {'norcalli/nvim-colorizer.lua'}
+    use {'nvim-tree/nvim-web-devicons'}
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     --------------------- LSP --------------------
     use("hrsh7th/nvim-cmp")
     -- for vsnip

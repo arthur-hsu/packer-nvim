@@ -28,8 +28,8 @@ Plug 'https://github.com/nvimdev/zephyr-nvim' " zephyr
 
 Plug 'airblade/vim-gitgutter' " git
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tell-k/vim-autopep8'
@@ -44,7 +44,9 @@ Plug 'https://github.com/MTDL9/vim-log-highlighting'
 "Plug 'ycm-core/YouCompleteMe'
 "Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
 call plug#end()
-
+if exists(':GuiFont')
+    GuiFont! JetBrains Mono:h14
+endif
 syntax on                                     
 set nu rnu  " 啟用相對行術
 set t_Co=256
@@ -69,16 +71,16 @@ let g:gitgutter_signs=0
 let g:gitgutter_highlight_linenrs=1
 
 
-highlight GitGutterAddLineNr guifg=lightgreen
+highlight GitGutterAddLineNr guifg=LightRed
 highlight GitGutterChangeLineNr guifg=LightMagenta
-highlight GitGutterDeleteLineNr guifg=lightred
-highlight GitGutterChangeDeleteLineNr guifg=lightred 
+highlight GitGutterDeleteLineNr guifg=LightRed
+highlight GitGutterChangeDeleteLineNr guifg=LightRed
 
 lua require('init')
 
 source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
 source $HOME/nvim/config/multi_line.vim
-source $HOME/nvim/config/airline.vim
+"source $HOME/nvim/config/airline.vim
 "source $HOME/nvim/config/ale.vim
 source $HOME/nvim/config/nerdtree.vim
 source $HOME/nvim/config/indent.vim
