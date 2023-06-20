@@ -34,22 +34,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tell-k/vim-autopep8'
 Plug 'nathanaelkane/vim-indent-guides' " IndentGuides
-Plug 'luochen1990/rainbow' " 彩虹括號號
 Plug 'scrooloose/nerdcommenter' " 註解 \cc 取消註解 \cu
 Plug 'mg979/vim-visual-multi' " 多重光標
 "Plug 'dense-analysis/ale' " 偵錯程式需要使用 pip 安裝 pip install pylint
 Plug 'https://github.com/fcpg/vim-osc52' " <C-c>遠端複製到本地
 Plug 'https://github.com/mbbill/undotree'
 Plug 'https://github.com/MTDL9/vim-log-highlighting'
-Plug 'neoclide/jsonc.vim'
-"Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
-"Plug 'https://github.com/vim-python/python-syntax'
 "not enable
 "Plug 'ycm-core/YouCompleteMe'
 "Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
-"Plug 'sheerun/vim-polyglot'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 syntax on                                     
@@ -83,18 +76,13 @@ highlight GitGutterChangeDeleteLineNr guifg=lightred
 
 lua require('init')
 
-"source $HOME/nvim/config/coc.vim 
-source $HOME/nvim/config/rainbow.vim 
 source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
 source $HOME/nvim/config/multi_line.vim
 source $HOME/nvim/config/airline.vim
 "source $HOME/nvim/config/ale.vim
-"source $HOME/nvim/config/semshi.vim
 source $HOME/nvim/config/nerdtree.vim
 source $HOME/nvim/config/indent.vim
 "source $HOME/nvim/config/YouCompleteMe.vim 
-"source $HOME/nvim/config/treesitter.vim
-"autocmd VimEnter :TSBufToggle highlight
 
 let g:python_highlight_all = 1
 

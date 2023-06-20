@@ -1,22 +1,18 @@
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    use {"williamboman/mason.nvim"}
+    use {"williamboman/mason-lspconfig.nvim"}
+    use {"neovim/nvim-lspconfig"}
     -------------------------- plugins -------------------------------------------
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'HiPhish/nvim-ts-rainbow2' }
     use {'ray-x/lsp_signature.nvim'}
     --------------------- LSP --------------------
-    use({ "williamboman/mason.nvim" })
-    -- Lspconfig
-    use({ "neovim/nvim-lspconfig" })
-    -- 补全引擎
     use("hrsh7th/nvim-cmp")
-    -- 补全源
     -- for vsnip
     use("hrsh7th/vim-vsnip")
     use("hrsh7th/cmp-vsnip")
-    -- for snippy
-    use("dcampos/nvim-snippy")
-    use("dcampos/cmp-snippy")
-    
+
     -- for lua
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
@@ -26,12 +22,7 @@ require('packer').startup(function(use)
     use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
     use("hrsh7th/cmp-path") -- { name = 'path' }
     use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
-    use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
-    -- 常见编程语言代码段
     use("rafamadriz/friendly-snippets")
-    -- UI 增强
-    -- Lua 增强
-    use("folke/lua-dev.nvim")
 end)
 
 
