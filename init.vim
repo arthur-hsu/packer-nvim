@@ -118,9 +118,9 @@ set fileformat=unix "設置以unix的格式保存文件
 set textwidth=200       " break lines when line length increases
 filetype indent on " 自适应不同语言的智能缩进
 set expandtab " 将制表符扩展为空格
-"set tabstop=4 " 设置编辑时制表符占用空格数
-"set shiftwidth=4 " 设置格式化时制表符占用空格数
-"set softtabstop=4 " 让 vim 把连续数量的空格视为一个制表符
+set tabstop=4 " 设置编辑时制表符占用空格数
+set shiftwidth=4 " 设置格式化时制表符占用空格数
+set softtabstop=4 " 让 vim 把连续数量的空格视为一个制表符
 let &t_ut='' " 將縮排定義為空格
 set smartindent
 set autoindent

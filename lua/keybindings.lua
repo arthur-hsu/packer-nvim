@@ -78,7 +78,7 @@ pluginKeys.cmp = function(cmp)
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
   end
 
-  return {
+          return {
     -- 上一个
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<up>"] = cmp.mapping.select_prev_item(),
@@ -95,13 +95,27 @@ pluginKeys.cmp = function(cmp)
     -- 确认
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping.confirm({
-      select = true,
-      behavior = cmp.ConfirmBehavior.Replace,
+    ["<CR>"] = cmp.mapping({
+        i = function(fallback)
+            if cmp.visible() and cmp.get_active_entry() then
+                cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            else
+                fallback()
+            end
+        end,
+        s = cmp.mapping.confirm({ select = true }),
+        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
     }),
-    ["<TAB>"] = cmp.mapping.confirm({
-      select = true,
-      behavior = cmp.ConfirmBehavior.Replace,
+    ["<TAB>"] = cmp.mapping({
+        i = function(fallback)
+            if cmp.visible() and cmp.get_active_entry() then
+                cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            else
+                fallback()
+            end
+        end,
+        s = cmp.mapping.confirm({ select = true }),
+        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
     }),
     -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
   }
