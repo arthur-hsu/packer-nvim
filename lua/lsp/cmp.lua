@@ -1,7 +1,6 @@
 
 local cmp = require("cmp")
 vim.g.completeopt = "menu,menuone,noselect"
-require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
     experimental = {
@@ -12,8 +11,6 @@ cmp.setup({
         expand = function(args)
             --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            --require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            --vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
     dependencies = {
@@ -24,7 +21,6 @@ cmp.setup({
         { name = 'luasnip' },
         { name = "emoji"},
         { name = "path" },
-        --{ name = "nvim_lsp_signature_help" }
     },
         {
         { name = 'buffer' },
@@ -52,29 +48,32 @@ cmp.setup.cmdline(':', {
 })
 
 
+--local sign = function(opts)
+  --vim.fn.sign_define(opts.name, {
+    --texthl = opts.name,
+    --text = opts.text,
+    --numhl = ''
+  --})
+--end
 
-local sign = function(opts)
-  vim.fn.sign_define(opts.name, {
-    texthl = opts.name,
-    text = opts.text,
-    numhl = ''
-  })
-end
+--sign({name = 'DiagnosticSignError', text = '✘'})
+--sign({name = 'DiagnosticSignWarn', text = '▲'})
+--sign({name = 'DiagnosticSignHint', text = '⚑'})
+--sign({name = 'DiagnosticSignInfo', text = 'ℹ️'})
 
-sign({name = 'DiagnosticSignError', text = '✘'})
-sign({name = 'DiagnosticSignWarn', text = '▲'})
-sign({name = 'DiagnosticSignHint', text = '⚑'})
-sign({name = 'DiagnosticSignInfo', text = ''})
 
-vim.diagnostic.config({
-  virtual_text = false,
-  severity_sort = true,
-  float = {
-    border = 'rounded',
-    source = 'always',
-  },
-})
 
+--vim.diagnostic.config({
+  --virtual_text = true,
+  --signs = true,
+  ----underline = true,
+  --update_in_insert = true,
+  --severity_sort = false,
+  --float = {
+    --border = "border",
+    --source = 'always',
+  --},
+--})
 
 
 

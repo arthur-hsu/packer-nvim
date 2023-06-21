@@ -45,7 +45,7 @@ Plug 'https://github.com/MTDL9/vim-log-highlighting'
 "Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
 call plug#end()
 if exists(':GuiFont')
-    GuiFont! JetBrains Mono:h14
+    GuiFont! JetBrains_Mono:h14
 endif
 syntax on                                     
 set nu rnu  " 啟用相對行術

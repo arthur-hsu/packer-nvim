@@ -6,7 +6,12 @@ require('packer').startup(function(use)
     -------------------------- plugins -------------------------------------------
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use { 'HiPhish/nvim-ts-rainbow2' }
+    use { 'MDeiml/tree-sitter-markdown' }
     use {'ray-x/lsp_signature.nvim'}
+    use {"folke/noice.nvim",requires = "MunifTanjim/nui.nvim", "rcarriga/nvim-notify"}
+    use {"MunifTanjim/nui.nvim"}
+    --use {"rcarriga/nvim-notify"}
+
     use {'norcalli/nvim-colorizer.lua'}
     use {'nvim-tree/nvim-web-devicons'}
     use {
@@ -30,7 +35,8 @@ require('packer').startup(function(use)
     use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
     use("hrsh7th/cmp-path") -- { name = 'path' }
     use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
-    use("rafamadriz/friendly-snippets")
+    --use("rafamadriz/friendly-snippets")
+    --use("hrsh7th/cmp-nvim-lsp-signature-help")
 end)
 
 

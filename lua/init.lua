@@ -7,6 +7,7 @@ require("lsp.cmp")
 ---- plug-cfg
 require("plug-cfg.nvim-treesitter")
 require("plug-cfg.lsp_signature")
+require("plug-cfg.noice")
 require'colorizer'.setup()
 require("plug-cfg.lualine")
 require("plug-cfg.tabline")
