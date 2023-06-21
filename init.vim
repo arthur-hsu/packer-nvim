@@ -34,25 +34,13 @@ Plug 'mg979/vim-visual-multi' " 多重光標
 Plug 'https://github.com/fcpg/vim-osc52' " <C-c>遠端複製到本地
 Plug 'https://github.com/mbbill/undotree'
 
-
-
-
-
-"not enable
-"Plug 'preservim/nerdtree'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'nathanaelkane/vim-indent-guides' " IndentGuides
-"Plug 'dense-analysis/ale' " 偵錯程式需要使用 pip 安裝 pip install pylint
-"Plug 'https://github.com/MTDL9/vim-log-highlighting'
-"Plug 'ycm-core/YouCompleteMe'
-"Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
 call plug#end()
+
+
 if exists(':GuiFont')
     GuiFont! JetBrains_Mono:h14
 endif
-syntax on                                     
+syntax on
 set nu rnu  " 啟用相對行術
 set t_Co=256
 set termguicolors
@@ -85,11 +73,6 @@ lua require('init')
 
 source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
 source $HOME/nvim/config/multi_line.vim
-"source $HOME/nvim/config/airline.vim
-"source $HOME/nvim/config/ale.vim
-"source $HOME/nvim/config/nerdtree.vim
-"source $HOME/nvim/config/indent.vim
-"source $HOME/nvim/config/YouCompleteMe.vim 
 
 let g:python_highlight_all = 1
 
@@ -99,10 +82,10 @@ set clipboard+=unnamedplus
 set noswapfile " 關閉生成暫存檔
 
 " configure expanding of tabs for various file types
-au BufRead,BufNewFile *.py set expandtab
-au BufRead,BufNewFile *.c set noexpandtab
-au BufRead,BufNewFile *.h set noexpandtab
-au BufRead,BufNewFile Makefile* set noexpandtab
+"au BufRead,BufNewFile *.py set expandtab
+"au BufRead,BufNewFile *.c set noexpandtab
+"au BufRead,BufNewFile *.h set noexpandtab
+"au BufRead,BufNewFile Makefile* set noexpandtab
 
 " 隱藏滾動條
 set guioptions-=r
@@ -142,6 +125,3 @@ set cursorline "突出顯示當前行
 " 在重新開啟檔案後保留遊標位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
-" semantic
-"let g:semanticEnableFileTypes = ['javascript', 'vim', 'python']
-"noremap <Leader>s :SemanticHighlight<cr>
