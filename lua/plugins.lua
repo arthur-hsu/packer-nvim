@@ -4,22 +4,32 @@ require('packer').startup(function(use)
     use {"williamboman/mason-lspconfig.nvim"}
     use {"neovim/nvim-lspconfig"}
     -------------------------- plugins -------------------------------------------
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use { 'HiPhish/nvim-ts-rainbow2' }
-    use { 'MDeiml/tree-sitter-markdown' }
-    use {'ray-x/lsp_signature.nvim'}
-    use {"folke/noice.nvim",requires = "MunifTanjim/nui.nvim", "rcarriga/nvim-notify"}
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlight
+    use { 'HiPhish/nvim-ts-rainbow2' } -- Rainbow delimiters
+    use { 'MDeiml/tree-sitter-markdown' } -- markdown
+    use {'ray-x/lsp_signature.nvim'} -- signature
+    use {"folke/noice.nvim",requires = "MunifTanjim/nui.nvim", "rcarriga/nvim-notify"} -- notice
     use {"MunifTanjim/nui.nvim"}
     --use {"rcarriga/nvim-notify"}
 
-    use {'norcalli/nvim-colorizer.lua'}
-    use {'nvim-tree/nvim-web-devicons'}
+    use {'norcalli/nvim-colorizer.lua'} -- rgb color
+    use {'nvim-tree/nvim-web-devicons'} -- icon
+    -- statusline
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    --tabbar
     use {'kdheepak/tabline.nvim'}
-    --use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    use "lukas-reineke/indent-blankline.nvim" -- indent
+    use "windwp/nvim-autopairs" --autopairs
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
     --------------------- LSP --------------------
     use("hrsh7th/nvim-cmp")
     -- for vsnip

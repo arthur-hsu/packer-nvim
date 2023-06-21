@@ -27,20 +27,25 @@ Plug 'romgrk/doom-one.vim'
 Plug 'https://github.com/nvimdev/zephyr-nvim' " zephyr
 
 Plug 'airblade/vim-gitgutter' " git
-Plug 'preservim/nerdtree'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tell-k/vim-autopep8'
-Plug 'nathanaelkane/vim-indent-guides' " IndentGuides
 Plug 'scrooloose/nerdcommenter' " 註解 \cc 取消註解 \cu
 Plug 'mg979/vim-visual-multi' " 多重光標
-"Plug 'dense-analysis/ale' " 偵錯程式需要使用 pip 安裝 pip install pylint
 Plug 'https://github.com/fcpg/vim-osc52' " <C-c>遠端複製到本地
 Plug 'https://github.com/mbbill/undotree'
-Plug 'https://github.com/MTDL9/vim-log-highlighting'
+
+
+
+
+
 "not enable
+"Plug 'preservim/nerdtree'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'nathanaelkane/vim-indent-guides' " IndentGuides
+"Plug 'dense-analysis/ale' " 偵錯程式需要使用 pip 安裝 pip install pylint
+"Plug 'https://github.com/MTDL9/vim-log-highlighting'
 "Plug 'ycm-core/YouCompleteMe'
 "Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
 call plug#end()
@@ -82,8 +87,8 @@ source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
 source $HOME/nvim/config/multi_line.vim
 "source $HOME/nvim/config/airline.vim
 "source $HOME/nvim/config/ale.vim
-source $HOME/nvim/config/nerdtree.vim
-source $HOME/nvim/config/indent.vim
+"source $HOME/nvim/config/nerdtree.vim
+"source $HOME/nvim/config/indent.vim
 "source $HOME/nvim/config/YouCompleteMe.vim 
 
 let g:python_highlight_all = 1

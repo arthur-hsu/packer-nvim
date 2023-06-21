@@ -2,6 +2,17 @@
 local cmp = require("cmp")
 vim.g.completeopt = "menu,menuone,noselect"
 
+
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp = require('cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
+
+
 cmp.setup({
     experimental = {
         ghost_text = true,
@@ -48,32 +59,32 @@ cmp.setup.cmdline(':', {
 })
 
 
---local sign = function(opts)
-  --vim.fn.sign_define(opts.name, {
-    --texthl = opts.name,
-    --text = opts.text,
-    --numhl = ''
-  --})
---end
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
+end
 
---sign({name = 'DiagnosticSignError', text = '✘'})
---sign({name = 'DiagnosticSignWarn', text = '▲'})
---sign({name = 'DiagnosticSignHint', text = '⚑'})
---sign({name = 'DiagnosticSignInfo', text = 'ℹ️'})
+sign({name = 'DiagnosticSignError', text = '✘'})
+sign({name = 'DiagnosticSignWarn', text = '▲'})
+sign({name = 'DiagnosticSignHint', text = '⚑'})
+sign({name = 'DiagnosticSignInfo', text = 'ℹ️'})
 
 
 
---vim.diagnostic.config({
-  --virtual_text = true,
-  --signs = true,
-  ----underline = true,
-  --update_in_insert = true,
-  --severity_sort = false,
-  --float = {
-    --border = "border",
-    --source = 'always',
-  --},
---})
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  --underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+  float = {
+    border = "border",
+    source = 'always',
+  },
+})
 
 
 

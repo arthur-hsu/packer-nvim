@@ -50,7 +50,7 @@ nmap <silent><C-s> <esc>:w!<CR>
 imap <silent><C-s> <esc>:w!<CR>
 nmap <silent><F2> : set nu! <CR>:set rnu!<CR>
 nmap <silent><F3> :ALEToggle<CR>
-nnoremap <silent><F4> :exec 'NERDTreeToggle' <CR>
+nnoremap <silent><F4> :NvimTreeToggle<CR>
 map <silent><F5> :call CompileRun()<CR>
 map <silent><F7> : UndotreeToggle<CR>
 
