@@ -1,10 +1,11 @@
 require("plugins")
 require("keybindings")
----- 内置LSP
+--require("basic-cfg")
+--  内置LSP
 require("lsp.setup")
 require("lsp.cmp")
 
----- plug-cfg
+--  plug-cfg
 require("plug-cfg.nvim-treesitter")
 require("plug-cfg.lsp_signature")
 require("plug-cfg.noice")
@@ -13,4 +14,4 @@ require("plug-cfg.lualine")
 require("plug-cfg.tabline")
 require("plug-cfg.blankline")
 require("plug-cfg.tree")
---require("basic-cfg")
+require("plug-cfg.autopairs")

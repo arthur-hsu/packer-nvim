@@ -49,4 +49,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
             error = "✘",
         },
     },
-} -- END_DEFAULT_OPTS
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
+}
