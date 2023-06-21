@@ -6,7 +6,6 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
-
 local opt = {
   noremap = true,
   silent = true,
