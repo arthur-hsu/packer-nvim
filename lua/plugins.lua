@@ -11,6 +11,7 @@ require('packer').startup(function(use)
     use {"folke/noice.nvim",requires = "MunifTanjim/nui.nvim", "rcarriga/nvim-notify"} -- notice
     use {"MunifTanjim/nui.nvim"}
     --use {"rcarriga/nvim-notify"}
+    use 'CRAG666/code_runner.nvim'
 
     use {'norcalli/nvim-colorizer.lua'} -- rgb color
     use {'nvim-tree/nvim-web-devicons'} -- icon

@@ -51,7 +51,7 @@ imap <silent><C-s> <esc>:w!<CR>
 nmap <silent><F2> : set nu! <CR>:set rnu!<CR>
 nmap <silent><F3> :ALEToggle<CR>
 nnoremap <silent><F4> :NvimTreeToggle<CR>
-map <silent><F5> :call CompileRun()<CR>
+map <silent><F5> :RunCode<CR>
 map <silent><F7> : UndotreeToggle<CR>
 
 
@@ -67,23 +67,3 @@ map <silent><A-Up> :resize-5 <CR>
 map <silent><A-Down> :resize+5 <CR> 
 
 
-func! CompileRun()
-    exec "w"
-    if &filetype == 'cpp'
-        exec '!g++ -std=c++11 % -o /tmp/a.out && /tmp/a.out<'
-        exec "!time ./%<"
-    elseif &filetype == 'javascript'
-        exec '!node %'
-    elseif &filetype == 'java'
-        exec '!javac %'
-        exec '!java %<'
-    elseif &filetype == 'sh'
-        :!time bash %
-    elseif &filetype == 'python'
-        if g:iswindows == 1 
-            exec '!python %'
-        else
-            exec '!python3 %'
-        endif
-    endif
-endfunc
