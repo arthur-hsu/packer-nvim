@@ -1,4 +1,4 @@
-
+local lspkind = require('lspkind')
 local cmp = require("cmp")
 vim.g.completeopt = "menu,menuone,noselect"
 
@@ -6,28 +6,40 @@ cmp.setup({
     experimental = {
         ghost_text = true,
     },
-    -- 指定 snippet 引擎
     snippet = {
         expand = function(args)
             --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
-    dependencies = {
-        "hrsh7th/cmp-emoji", -- add cmp source as dependency of cmp
-    },
     sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = 'luasnip' },
-        { name = "emoji"},
         { name = "path" },
-    },
-        {
-        { name = 'buffer' },
+        { name = "nvim_lsp", group_index = 1 },
+        { name = 'buffer',group_index = 2 },
+        { name = 'luasnip', group_index = 3 },
     }),
-
+    window = {
+        documentation = cmp.config.window.bordered()
+    },
     mapping = require("keybindings").cmp(cmp),
+
+    formatting = {
+        expandable_indicator = true,
+        --fields = {'menu', 'abbr', 'kind'},
+        format = lspkind.cmp_format({
+            with_text = true, -- do not show text alongside icons
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            before = function (entry, vim_item)
+                -- Source 显示提示来源
+                vim_item.menu = "["..string.upper(entry.source.name).."]"
+                return vim_item
+            end
+        })
+      },
 })
+
+
+
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline({ '/', '?' }, {
