@@ -2,10 +2,6 @@
 local cmp = require("cmp")
 vim.g.completeopt = "menu,menuone,noselect"
 
-
-
-
-
 cmp.setup({
     experimental = {
         ghost_text = true,
@@ -65,19 +61,14 @@ sign({name = 'DiagnosticSignWarn', text = '▲'})
 sign({name = 'DiagnosticSignHint', text = '⚑'})
 sign({name = 'DiagnosticSignInfo', text = 'ℹ️'})
 
-
-
 vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  --underline = true,
-  update_in_insert = false,
-  severity_sort = false,
-  float = {
-    border = "border",
-    source = 'always',
-  },
+  virtual_text = false
 })
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
 
 
 
