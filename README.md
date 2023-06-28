@@ -5,31 +5,26 @@
 
 cmd execute
 
-pip3 install neovim
-
-npm install neovim
+    pip3 install neovim
+    npm install neovim
 
 
 On windows add cmd in $HOME/AppData/Local/nvim
 
-cd
+    cd
+    mkdir .\AppData\Local\nvim
+    nvim .\AppData\Local\nvim\init.vim
+init.vim add
 
-mkdir .\AppData\Local\nvim
-
-nvim .\AppData\Local\nvim\init.vim
-
-set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
-
-source $HOME/nvim/init.vim          " source all settings from $HOME/.vim/vimrc
+    set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
+    source $HOME/nvim/init.vim          " source all settings from $HOME/.vim/vimrc
 
 On linux
   
-cd
+    cd
+    mkdir ~/.config/nvim
+    nvim ~/.config/nvim/init.vim
+init.vim add
 
-mkdir ~/.config/nvim
-
-nvim ~/.config/nvim/init.vim
-
-set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
-
-source $HOME/nvim/init.vim          " source all settings from $HOME/.vim/vimrc
+    set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
+    source $HOME/nvim/init.vim          " source all settings from $HOME/.vim/vimrc
