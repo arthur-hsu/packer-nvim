@@ -1,4 +1,6 @@
 # .vim
+![Now](https://github.com/aaa890177/nvim/assets/127286236/c38af9c3-32e5-42eb-8e6a-6c193cd2e959)
+
 
 cmd execute
 
