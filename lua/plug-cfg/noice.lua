@@ -6,12 +6,13 @@ require("noice").setup(
         opts = {}, -- global options for the cmdline. See section on views
         ---"@type table<string, CmdlineFormat>"
         format = {
-            cmdline = { icon = ">" },
-            search_down = { icon = "🔍⌄" },
-            search_up = { icon = "🔍⌃" },
-            filter = { icon = "$" },
-            lua = { icon = "☾" },
-            help = { icon = "?" },
+              --without nert font
+            --cmdline = { icon = ">" },
+            --search_down = { icon = "🔍⌄" },
+            --search_up = { icon = "🔍⌃" },
+            --filter = { icon = "$" },
+            --lua = { icon = "☾" },
+            --help = { icon = "?" },
         },
     },
     messages = {
@@ -188,20 +189,20 @@ require("noice").setup(
     ---"@type table<string, NoiceFilter>"
     status = {}, --- @see section on statusline components
     ---"@type NoiceFormatOptions"
-    format = {
-        level = {
-            icons = {
-                error = "✖",
-                warn = "▼",
-                info = "●",
-            },
-        },
-    },
-    inc_rename = {
-        cmdline = {
-            format = {
-                IncRename = { icon = "⟳" }
-            },
-        },
-    }
+    --format = {
+        --level = {
+            --icons = {
+                --error = "✖",
+                --warn = "▼",
+                --info = "●",
+            --},
+        --},
+    --},
+    --inc_rename = {
+        --cmdline = {
+            --format = {
+                --IncRename = { icon = "⟳" }
+            --},
+        --},
+    --}
 })

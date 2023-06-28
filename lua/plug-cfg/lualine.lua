@@ -64,10 +64,10 @@ require('lualine').setup {
                colored = true},
             --{'fileformat',
                 --colored = true,
-                --icons_enabled = false},
+                --icons_enabled = true},
             {'filetype',
                 colored = true,
-                icons_enabled = false},
+                icons_enabled = true},
         },
         lualine_y = {
             {'diagnostics',
@@ -76,7 +76,7 @@ require('lualine').setup {
                 sources = {'nvim_lsp'},
                 symbols = {error = '✘', warn = '▲', info = '⚑', hint = 'ℹ️'},
                 colored = true, -- Displays a colored diff status if set to true
-                icons_enabled = false,
+                icons_enabled = true,
             },
             {'progress',
                 colored = true},

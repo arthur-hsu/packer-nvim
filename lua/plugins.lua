@@ -21,7 +21,7 @@ require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     --tabbar
-    use {'kdheepak/tabline.nvim'}
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     use "lukas-reineke/indent-blankline.nvim" -- indent
     use "windwp/nvim-autopairs" --autopairs
     use {

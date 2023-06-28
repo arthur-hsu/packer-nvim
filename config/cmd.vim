@@ -19,7 +19,7 @@ function! ToggleHighlight(...)
 endfunction
 
 "高亮最後搜尋的文字
-map <silent><f9> :call ToggleHighlight(1)<CR> :IndentGuidesToggle<CR> 
+map <silent><f9> :call ToggleHighlight(1)<CR>
 
 "遊標F10自動高亮
 let g:toggleCursorMoved = 1
