@@ -1,5 +1,6 @@
 let g:iswindows = 0
 let g:islinux = 0
+
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     let g:iswindows = 1
     map rc :w<CR> :e $HOME\nvim\init.vim<CR>
@@ -25,26 +26,21 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 if exists(':GuiFont')
     GuiFont JetBrainsMonoNL_Nerd_Font_Mono:h14
 endif
-syntax on
-set nu rnu  " 啟用相對行術
-set t_Co=256
-set termguicolors
-set background=dark "設置背景色
-colo zephyr
-set buftype=""
-set nocompatible              " be iMproved, required
 filetype off                 " required
 filetype plugin indent on    " required
+set buftype=""
+syntax on
+set nocompatible              " be iMproved, required
+set termguicolors
+set t_Co=256
+let g:python_highlight_all = 1
+set background=dark "設置背景色
+colo zephyr
 
+
+set nu rnu  " 啟用相對行術
 set undofile " Maintain undo history between sessions
 set undodir=$HOME/.undodir/nvim
-
-
-lua require('init')
-
-source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
-source $HOME/nvim/config/multi_line.vim
-source $HOME/nvim/config/gitgutter.vim
 
 
 " 让Vim可视模式下选中的内容复制到系统剪贴板
@@ -82,5 +78,8 @@ set expandtab
 set whichwrap+=<,>,h,l
 set autoread
 set cursorline "突出顯示當前行
-let g:python_highlight_all = 1
 
+lua require('init')
+source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
+source $HOME/nvim/config/multi_line.vim
+source $HOME/nvim/config/gitgutter.vim
