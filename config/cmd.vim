@@ -1,5 +1,3 @@
-"移除搜尋結果
-command! H let @/=""
 " GIT diff
 command! Gdif GitGutterDiffOrig
 nnoremap <silent><F8> :let @/ = ""<CR> :GitGutterLineHighlightsToggle<CR>
@@ -43,13 +41,12 @@ map <silent><F10> :call ToggleCursorMoved(1)<CR>
 vmap <silent><C-c> y:Oscyank<cr>
 
 
-imap <silent><C-b> <esc><C-o>
-nmap <silent><C-b> <C-o>
+imap <silent><C-b> <esc><C-o><C-o>
+nmap <silent><C-b> <C-o><C-o>
 
 nmap <silent><C-s> <esc>:w!<CR>
 imap <silent><C-s> <esc>:w!<CR>
 nmap <silent><F2> : set nu! <CR>:set rnu!<CR>
-nmap <silent><F3> :ALEToggle<CR>
 nnoremap <silent><F4> :NvimTreeToggle<CR>
 map <silent><F5> :RunCode<CR>
 map <silent><F7> : UndotreeToggle<CR>

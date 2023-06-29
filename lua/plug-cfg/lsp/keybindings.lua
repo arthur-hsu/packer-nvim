@@ -25,7 +25,6 @@ map("v", ">", ">gv", opt)
 
 
 
-
 local pluginKeys = {}
 
 -- Global mappings.

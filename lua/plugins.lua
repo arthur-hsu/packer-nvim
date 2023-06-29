@@ -1,8 +1,8 @@
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    use {"williamboman/mason.nvim"}
-    use {"williamboman/mason-lspconfig.nvim"}
-    use {"neovim/nvim-lspconfig"}
+    -------------------------- color ---------------------------------------------
+    use 'dunstontc/vim-vscode-theme'                    --dark_plus
+    use 'nvimdev/zephyr-nvim'                           --zephyr
     -------------------------- plugins -------------------------------------------
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlight
     use { 'HiPhish/nvim-ts-rainbow2' } -- Rainbow delimiters
@@ -22,8 +22,11 @@ require('packer').startup(function(use)
     }
     --tabbar
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    
     use "lukas-reineke/indent-blankline.nvim" -- indent
+    
     use "windwp/nvim-autopairs" --autopairs
+    
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -31,7 +34,17 @@ require('packer').startup(function(use)
         },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
-    --------------------- LSP --------------------
+    use 'airblade/vim-gitgutter'                                -- git
+    use 'scrooloose/nerdcommenter'                              -- 註解 \cc 取消註解 \cu
+    use 'mg979/vim-visual-multi'                                -- 多重光標
+    use 'fcpg/vim-osc52'                     -- <C-c>遠端複製到本地
+    use 'mbbill/undotree'
+    -------------------------- LSP -----------------------------------------------
+    --LSP install
+    use {"williamboman/mason.nvim"}
+    use {"williamboman/mason-lspconfig.nvim"}
+    use {"neovim/nvim-lspconfig"}
+    --cmp
     use("hrsh7th/nvim-cmp")
     -- for vsnip
     use("hrsh7th/vim-vsnip")

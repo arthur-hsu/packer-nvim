@@ -21,7 +21,7 @@ cmp.setup({
     window = {
         documentation = cmp.config.window.bordered()
     },
-    mapping = require("keybindings").cmp(cmp),
+    mapping = require("plug-cfg.lsp.keybindings").cmp(cmp),
 
     formatting = {
         expandable_indicator = true,

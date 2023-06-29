@@ -1,9 +1,8 @@
 require("plugins")
-require("keybindings")
---require("basic-cfg")
+require("plug-cfg.lsp.keybindings")
 --  内置LSP
-require("lsp.setup")
-require("lsp.cmp")
+require("plug-cfg.lsp.setup")
+require("plug-cfg.lsp.cmp")
 
 --  plug-cfg
 require("plug-cfg.nvim-treesitter")
