@@ -52,8 +52,8 @@ mkdir ~/.config/nvim
 ```
 
 - `init.vim` add
-    - Windows`nvim .\AppData\Local\nvim\init.vim`
-    - Linux`nvim ~/.config/nvim/init.vim`
+    - Windows:  `nvim .\AppData\Local\nvim\init.vim`
+    - Linux:    `nvim ~/.config/nvim/init.vim`
     
     在`init.vim`裡加入
 
