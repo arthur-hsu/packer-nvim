@@ -54,6 +54,7 @@ mkdir ~/.config/nvim
 - `init.vim` add
     - Windows`nvim .\AppData\Local\nvim\init.vim`
     - Linux`nvim ~/.config/nvim/init.vim`
+    
     在`init.vim`裡加入
 
           set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
