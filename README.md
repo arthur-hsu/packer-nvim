@@ -17,24 +17,34 @@ Terminal字體換成帶有`NERD`的
         pip3 install neovim
         npm install neovim
 
+- Install packer.nvim
+> Unix, Linux Installation
 
+```shell
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+> Windows Powershell Installation
+
+```shell
+git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+```
 - On windows add cmd in $HOME/AppData/Local/nvim
 
-        cd
-        mkdir .undodir
-        mkdir .undodir\nvim
-        mkdir .\AppData\Local\nvim
-        git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+```shell
+cd
+mkdir .undodir
+mkdir .undodir\nvim
+mkdir .\AppData\Local\nvim
+```        
 
 
 - On linux
-  
-        cd
-        mkdir .undodir
-        mkdir .undodir/nvim
-        mkdir ~/.config/nvim
-        git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-        ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```shell
+cd
+mkdir .undodir
+mkdir .undodir/nvim
+mkdir ~/.config/nvim
+```
 
 - `init.vim` add
     - Windows`nvim .\AppData\Local\nvim\init.vim`
