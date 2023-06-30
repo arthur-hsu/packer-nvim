@@ -12,20 +12,27 @@ cmd execute
 On windows add cmd in $HOME/AppData/Local/nvim
 
     cd
+    mkdir .undodir
+    mkdir .undodir\nvim
     mkdir .\AppData\Local\nvim
-    nvim .\AppData\Local\nvim\init.vim
     git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 
 
 On linux
   
     cd
+    mkdir .undodir
+    mkdir .undodir/nvim
     mkdir ~/.config/nvim
-    nvim ~/.config/nvim/init.vim
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 init.vim add
-
+    # .windows
+    nvim .\AppData\Local\nvim\init.vim
+    # .linux
+    nvim ~/.config/nvim/init.vim
+    
     set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
     source $HOME/nvim/init.vim          " source all settings from $HOME/.vim/vimrc
+
