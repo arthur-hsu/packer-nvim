@@ -14,9 +14,12 @@ Terminal字體換成帶有`NERD`的
 ## Setup
 - Cmd execute
 
-        pip3 install neovim
-        npm install neovim
-
+```shell
+cd
+git clone https://github.com/aaa890177/nvim.git
+pip3 install neovim
+npm install neovim
+```
 - Install packer.nvim
 > Unix, Linux Installation
 
@@ -28,6 +31,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 ```shell
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 ```
+
+## setup `init.vim`
 - On windows add cmd in $HOME/AppData/Local/nvim
 
 ```shell
