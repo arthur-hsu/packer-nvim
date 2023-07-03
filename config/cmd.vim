@@ -5,9 +5,7 @@ command! Gdif GitGutterDiffOrig
 vmap <silent>< <gv
 vmap <silent>> >gv
 
-
-
-vmap <silent><C-c> y:Oscyank<CR>
+"vmap <silent><C-c> y:Oscyank<CR>
 imap <silent><C-b> <esc><C-o><C-o>
 nmap <silent><C-b> <C-o><C-o>
 
@@ -20,9 +18,6 @@ map <silent><F5> :RunCode<CR>
 map <silent><F7> : UndotreeToggle<CR>
 
 
-" 複製貼上到剪貼簿
-vnoremap <silent>y "+y
-nmap <silent>p "+p
 " 設定分屏
 nmap <silent>spl :set splitright<CR>:vsplit<CR>
 nmap <silent>spk :set splitbelow<CR>:split<CR>

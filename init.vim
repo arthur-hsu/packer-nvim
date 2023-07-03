@@ -32,6 +32,7 @@ set background=dark "設置背景色
 colo zephyr
 
 
+
 set nu rnu  " 啟用相對行術
 set undofile " Maintain undo history between sessions
 set undodir=$HOME/.undodir/nvim
@@ -39,7 +40,7 @@ set undodir=$HOME/.undodir/nvim
 
 " 让Vim可视模式下选中的内容复制到系统剪贴板
 set clipboard=unnamed
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
 set noswapfile " 關閉生成暫存檔
 
 set wrap "設置換行

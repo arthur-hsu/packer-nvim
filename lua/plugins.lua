@@ -37,8 +37,8 @@ require('packer').startup(function(use)
     use 'airblade/vim-gitgutter'                                -- git
     use 'scrooloose/nerdcommenter'                              -- 註解 \cc 取消註解 \cu
     use 'mg979/vim-visual-multi'                                -- 多重光標
-    use 'fcpg/vim-osc52'                     -- <C-c>遠端複製到本地
-    use 'mbbill/undotree'
+    use 'mbbill/undotree'                                       -- 文件更動列表
+    use {'ojroques/nvim-osc52'}                                 -- ssh複製
     -------------------------- LSP -----------------------------------------------
     --LSP install
     use {"williamboman/mason.nvim"}
