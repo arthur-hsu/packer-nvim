@@ -1,6 +1,37 @@
 " GIT diff
 command! Gdif GitGutterDiffOrig
-nnoremap <silent><F8> :let @/ = ""<CR> :GitGutterLineHighlightsToggle<CR>
+
+" visual模式下缩进代码
+vmap <silent>< <gv
+vmap <silent>> >gv
+
+
+
+vmap <silent><C-c> y:Oscyank<CR>
+imap <silent><C-b> <esc><C-o><C-o>
+nmap <silent><C-b> <C-o><C-o>
+
+nmap <silent><C-s> <esc>:w!<CR>
+imap <silent><C-s> <esc>:w!<CR>
+nmap <silent><F2> : set nu! <CR>:set rnu!<CR>
+nmap <silent><F3> :GitGutterLineHighlightsToggle<CR>
+nnoremap <silent><F4> :NvimTreeToggle<CR>
+map <silent><F5> :RunCode<CR>
+map <silent><F7> : UndotreeToggle<CR>
+
+
+" 複製貼上到剪貼簿
+vnoremap <silent>y "+y
+nmap <silent>p "+p
+" 設定分屏
+nmap <silent>spl :set splitright<CR>:vsplit<CR>
+nmap <silent>spk :set splitbelow<CR>:split<CR>
+map <silent><A-Right> :vertical resize-5 <CR> 
+map <silent><A-Left> :vertical resize+5 <CR> 
+map <silent><A-Up> :resize-5 <CR> 
+map <silent><A-Down> :resize+5 <CR> 
+
+nnoremap <silent><F8> :let @/ = ""<CR>
 " yank current file's name
 nmap <leader>e :let @*=expand('%')<CR>
 " =====F9標記高亮所有搜尋結果=====
@@ -35,32 +66,4 @@ endfunction
 
 " nmap <f10> :autocmd CursorMoved * silent! exe printf('match Search /\<%s\>/', expand('<cword>'))<cr>
 map <silent><F10> :call ToggleCursorMoved(1)<CR>
-
-
-
-vmap <silent><C-c> y:Oscyank<cr>
-
-
-imap <silent><C-b> <esc><C-o><C-o>
-nmap <silent><C-b> <C-o><C-o>
-
-nmap <silent><C-s> <esc>:w!<CR>
-imap <silent><C-s> <esc>:w!<CR>
-nmap <silent><F2> : set nu! <CR>:set rnu!<CR>
-nnoremap <silent><F4> :NvimTreeToggle<CR>
-map <silent><F5> :RunCode<CR>
-map <silent><F7> : UndotreeToggle<CR>
-
-
-" 複製貼上到剪貼簿
-vnoremap <silent><Leader>y "+y
-nmap <silent><Leader>p "+p
-" 設定分屏
-nmap <silent>spl :set splitright<CR>:vsplit<CR>
-nmap <silent>spk :set splitbelow<CR>:split<CR>
-map <silent><A-Right> :vertical resize-5 <CR> 
-map <silent><A-Left> :vertical resize+5 <CR> 
-map <silent><A-Up> :resize-5 <CR> 
-map <silent><A-Down> :resize+5 <CR> 
-
 

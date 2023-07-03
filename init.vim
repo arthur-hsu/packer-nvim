@@ -6,19 +6,13 @@ if(has("win32") || has("win64") || has("win95") || has("win16"))
     map rc :w<CR> :e $HOME\nvim\init.vim<CR>
     map lua :w<CR> :e $HOME\nvim\lua\init.lua<CR>
     map <F6> :<esc>:source $HOME\nvim\init.vim<CR> 
-    "python解释器路径"
-    let g:ycm_path_to_python_interpreter='C:\Python311\python.exe'
 else
     let g:islinux = 1
-    map rc :w<CR> :e $MYVIMRC<CR>
-    map lua :w<CR> :e $HOME\nvim\lua\init.lua<CR>
-    map <F6> :<esc>:source $MYVIMRC<CR>
-    "python解释器路径"
-    let g:ycm_path_to_python_interpreter='/usr/bin/python3'
+    map rc :w<CR> :e $HOME/nvim/init.vim<CR>
+    map lua :w<CR> :e $HOME/nvim/lua/init.lua<CR>
+    map <F6> :<esc>:source $HOME/nvim/lua/init.lua<CR>
 endif
-
-autocmd BufWritePost $HOME\nvim\init.vim source $MYVIMRC
-"autocmd VimEnter set guifont=Consolas:h12 
+autocmd BufWritePost $HOME\nvim\init.vim source $HOME\nvim\init.vim
 
 " 在重新開啟檔案後保留遊標位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif

@@ -20,8 +20,8 @@ local map = vim.api.nvim_set_keymap
 
 
 -- visual模式下缩进代码
-map("v", "<", "<gv", opt)
-map("v", ">", ">gv", opt)
+--map("v", "<", "<gv", opt)
+--map("v", ">", ">gv", opt)
 
 
 
@@ -86,7 +86,7 @@ pluginKeys.cmp = function(cmp)
     -- 出现补全
     ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     -- 取消
-    ["<A-,>"] = cmp.mapping({
+    ["<C-e>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
