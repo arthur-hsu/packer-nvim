@@ -32,7 +32,6 @@ set background=dark "設置背景色
 colo zephyr
 
 
-
 set nu rnu  " 啟用相對行術
 set undofile " Maintain undo history between sessions
 set undodir=$HOME/.undodir/nvim
@@ -53,7 +52,6 @@ set softtabstop=4 " 让 vim 把连续数量的空格视为一个制表符
 let &t_ut='' " 將縮排定義為空格
 set smartindent
 set autoindent
-filetype indent on " 自适应不同语言的智能缩进
 set ruler  " show line and column number
 set showcmd " show (partial) command in status line
 set showmatch "顯示匹配的括號
@@ -78,3 +76,4 @@ lua require('init')
 source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
 source $HOME/nvim/config/multi_line.vim
 source $HOME/nvim/config/gitgutter.vim
+source $HOME/nvim/config/baleia.vim

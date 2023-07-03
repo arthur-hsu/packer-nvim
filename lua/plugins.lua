@@ -1,3 +1,20 @@
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+	return
+end
+
+-- Have packer use a popup window
+packer.init({
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+		end,
+	},
+})
+
+
+
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -------------------------- color ---------------------------------------------
@@ -39,6 +56,7 @@ require('packer').startup(function(use)
     use 'mg979/vim-visual-multi'                                -- 多重光標
     use 'mbbill/undotree'                                       -- 文件更動列表
     use {'ojroques/nvim-osc52'}                                 -- ssh複製
+    use { 'm00qek/baleia.nvim', tag = 'v1.3.0' }
     -------------------------- LSP -----------------------------------------------
     --LSP install
     use {"williamboman/mason.nvim"}
@@ -53,7 +71,6 @@ require('packer').startup(function(use)
     -- for lua
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
-
     use("hrsh7th/cmp-emoji")
     use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
     use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
@@ -63,5 +80,4 @@ require('packer').startup(function(use)
     --use("rafamadriz/friendly-snippets")
     --use("hrsh7th/cmp-nvim-lsp-signature-help")
 end)
-
 
