@@ -1,11 +1,3 @@
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
 local opt = {
   noremap = true,
   silent = true,
@@ -18,10 +10,6 @@ local map = vim.api.nvim_set_keymap
 
 
 
-
--- visual模式下缩进代码
---map("v", "<", "<gv", opt)
---map("v", ">", ">gv", opt)
 
 
 
@@ -116,19 +104,20 @@ pluginKeys.cmp = function(cmp)
                 fallback()
             end
         end, { "i", "s" }
-    ),
+        ),
+    -- right confirm
+    --["<right>"] = cmp.mapping(
+        --function(fallback)
+            --if cmp.visible() then
+                --cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+            --elseif cmp.visible() and require("luasnip").expand_or_jumpable() then
+                --vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+            --else
+                --fallback()
+            --end
+        --end, { "i", "s" }
+    --),
     -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<right>"] = cmp.mapping(
-        function(fallback)
-            if cmp.visible() then
-                cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
-            elseif cmp.visible() and require("luasnip").expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-            else
-                fallback()
-            end
-        end, { "i", "s" }
-    ),
   }
 end
 
