@@ -2,14 +2,20 @@ local lspkind = require('lspkind')
 local cmp = require("cmp")
 vim.g.completeopt = "menu,menuone,noselect"
 
+
+
+
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on('confirm_done',cmp_autopairs.on_confirm_done())
+
 cmp.setup({
     experimental = {
         ghost_text = true,
     },
     snippet = {
         expand = function(args)
-            --vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     sources = cmp.config.sources({
@@ -19,6 +25,7 @@ cmp.setup({
         { name = 'luasnip', group_index = 3 },
     }),
     window = {
+        completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered()
     },
     mapping = require("plug-cfg.lsp.keybindings").cmp(cmp),
@@ -53,9 +60,11 @@ cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = 'path' },
-           },
-        {
-        { name = 'cmdline' },
+        { name = 'cmdline',
+          option={
+            ignore_cmds = {'qall','quit','write', 'Man', '!'},
+          },
+        }
     }),
 })
 
@@ -81,23 +90,13 @@ vim.diagnostic.config({
 vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
+--vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  --vim.lsp.handlers.hover,
+  --{border = 'rounded'}
+--)
+--vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  --vim.lsp.handlers.signature_help,
+  --{border = 'rounded'}
+--)
 
-
-
--- gray
---vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg='NONE', strikethrough=true, fg='#808080' })
--- blue
---vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg='NONE', fg='#569CD6' })
---vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link='CmpIntemAbbrMatch' })
--- light blue
---vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg='NONE', fg='#9CDCFE' })
---vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link='CmpItemKindVariable' })
---vim.api.nvim_set_hl(0, 'CmpItemKindText', { link='CmpItemKindVariable' })
--- pink
---vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg='NONE', fg='#C586C0' })
---vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link='CmpItemKindFunction' })
--- front
---vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg='NONE', fg='#D4D4D4' })
---vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link='CmpItemKindKeyword' })
---vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link='CmpItemKindKeyword' })
 

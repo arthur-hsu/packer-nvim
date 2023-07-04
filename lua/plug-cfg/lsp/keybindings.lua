@@ -1,3 +1,12 @@
+local has_words_before = function()
+  unpack = unpack or table.unpack
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+local luasnip = require("luasnip")
+
+
+
 local opt = {
   noremap = true,
   silent = true,
@@ -5,13 +14,6 @@ local opt = {
 
 -- 本地变量
 local map = vim.api.nvim_set_keymap
-
-
-
-
-
-
-
 
 local pluginKeys = {}
 
@@ -82,29 +84,30 @@ pluginKeys.cmp = function(cmp)
     -- 确认
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-         
-    ["<CR>"] = cmp.mapping(
+     ["<CR>"] = cmp.mapping({
+        i = function(fallback)
+            if cmp.visible() and cmp.get_active_entry() then
+                cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            else
+                fallback()
+            end
+        end,
+        s = cmp.mapping.confirm({ select = true }),
+        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+     }),
+    ["<Tab>"] = cmp.mapping(
         function(fallback)
             if cmp.visible() then
-                cmp.confirm({ behavior = cmp.confirmbehavior.insert, select = true })
-            elseif require("luasnip").expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<plug>luasnip-expand-or-jump", true, true, true), "")
+                cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
             else
                 fallback()
             end
         end, { "i", "s" }
     ),
-    ["<Tab>"] = cmp.mapping(
-        function(fallback)
-            if cmp.visible() then
-                cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
-            elseif require("luasnip").expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-            else
-                fallback()
-            end
-        end, { "i", "s" }
-        ),
     -- right confirm
     --["<right>"] = cmp.mapping(
         --function(fallback)
