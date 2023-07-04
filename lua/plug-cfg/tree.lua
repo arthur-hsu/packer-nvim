@@ -14,7 +14,7 @@ end
 
 require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     on_attach = my_on_attach,
-    auto_close = true,
+    --auto_close = true,
     hijack_cursor = true,
     sync_root_with_cwd = true,
     renderer = {
