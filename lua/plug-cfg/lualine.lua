@@ -20,7 +20,12 @@
 require('lualine').setup {
     options = {
         theme = 'codedark',
+        disabled_filetypes = {     -- Filetypes to disable lualine for.
+            statusline = {"NvimTree","diffpanel"},       -- only ignores the ft for statusline.
+            winbar = {"NvimTree","diffpanel"},                     -- only ignores the ft for winbar.
+        },
     },
+    globalstatus = true,
     sections = {
         lualine_a = {
             {'mode',
