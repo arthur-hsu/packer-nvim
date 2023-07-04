@@ -57,8 +57,8 @@ mkdir ~/.config/nvim
     
     在`init.vim`裡加入
 
-          set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
-          source $HOME/nvim/init.vim          " source all settings from $HOME/.vim/vimrc
+      set runtimepath+=$HOME/nvim         " let vim also search vim files located in $HOME/.vim
+      source $HOME/nvim/init.vim          " source all settings from $HOME/.vim/vimrc
 - 開啟 Nvim 輸入 `:PackerSync`
 
 
