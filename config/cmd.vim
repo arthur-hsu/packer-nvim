@@ -19,7 +19,6 @@ nmap <silent><F2> : set nu! <CR>:set rnu!<CR>
 nmap <silent><F3> :GitGutterLineHighlightsToggle<CR>
 nnoremap <silent><F4> :NvimTreeToggle<CR>
 map <silent><F5> :RunCode<CR>
-map <silent><F7> : UndotreeToggle<CR>
 
 
 " 設定分屏

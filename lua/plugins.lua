@@ -21,6 +21,10 @@ require('packer').startup(function(use)
     use 'dunstontc/vim-vscode-theme'                    --dark_plus
     use 'nvimdev/zephyr-nvim'                           --zephyr
     -------------------------- plugins -------------------------------------------
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        requires = { {'nvim-lua/plenary.nvim'}, {"debugloop/telescope-undo.nvim"}}
+    }
     use 'dstein64/vim-startuptime'
     use ("nathom/filetype.nvim")
     use "sindrets/diffview.nvim"
@@ -49,15 +53,12 @@ require('packer').startup(function(use)
     
     use {
         'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
+        requires = {'nvim-tree/nvim-web-devicons'},
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
     use 'airblade/vim-gitgutter'                                -- git
     use 'scrooloose/nerdcommenter'                              -- 註解 \cc 取消註解 \cu
     use 'mg979/vim-visual-multi'                                -- 多重光標
-    use 'mbbill/undotree'                                       -- 文件更動列表
     use {'ojroques/nvim-osc52'}                                 -- ssh複製
     use { 'm00qek/baleia.nvim', tag = 'v1.3.0' }                -- for ANSI decode
     use {
