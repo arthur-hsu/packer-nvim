@@ -57,6 +57,7 @@ set showcmd " show (partial) command in status line
 set showmatch "顯示匹配的括號
 set scrolloff=12 "距離頂部和底部5行
 set fenc=utf-8 "文件編碼
+set modifiable
 
 " make backspaces more powerfull
 set backspace=indent,eol,start
