@@ -15,4 +15,5 @@ require("plug-cfg.blankline")
 require("plug-cfg.tree")
 require("plug-cfg.autopairs")
 require("plug-cfg.osc52")
+require("plug-cfg.alpha")
 
