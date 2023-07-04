@@ -21,6 +21,7 @@ require('packer').startup(function(use)
     use 'dunstontc/vim-vscode-theme'                    --dark_plus
     use 'nvimdev/zephyr-nvim'                           --zephyr
     -------------------------- plugins -------------------------------------------
+    use "sindrets/diffview.nvim"
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- syntax highlight
     use { 'HiPhish/nvim-ts-rainbow2' } -- Rainbow delimiters
     use { 'MDeiml/tree-sitter-markdown' } -- markdown
