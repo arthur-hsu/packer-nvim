@@ -4,6 +4,10 @@ command! Gdif GitGutterDiffOrig
 " visual模式下缩进代码
 vmap <silent>< <gv
 vmap <silent>> >gv
+nnoremap <silent>]t :BufferLineCycleNext<CR>
+nnoremap <silent>[t :BufferLineCyclePrev<CR>
+
+
 
 "vmap <silent><C-c> y:Oscyank<CR>
 imap <silent><C-b> <esc><C-o><C-o>

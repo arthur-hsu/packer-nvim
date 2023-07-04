@@ -16,4 +16,4 @@ require("plug-cfg.tree")
 require("plug-cfg.autopairs")
 require("plug-cfg.osc52")
 require("plug-cfg.alpha")
-
+require("plug-cfg.code_runner")

@@ -45,6 +45,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
+    --vim.keymap.set('n', 'gr', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
@@ -93,29 +94,41 @@ pluginKeys.cmp = function(cmp)
     -- 确认
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping({
-        i = function(fallback)
-            if cmp.visible() and cmp.get_active_entry() then
-                cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+         
+    ["<CR>"] = cmp.mapping(
+        function(fallback)
+            if cmp.visible() then
+                cmp.confirm({ behavior = cmp.confirmbehavior.insert, select = true })
+            elseif require("luasnip").expand_or_jumpable() then
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<plug>luasnip-expand-or-jump", true, true, true), "")
             else
                 fallback()
             end
-        end,
-        s = cmp.mapping.confirm({ select = true }),
-        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-    }),
-    ["<TAB>"] = cmp.mapping({
-        i = function(fallback)
-            if cmp.visible() and cmp.get_active_entry() then
-                cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+        end, { "i", "s" }
+    ),
+    ["<Tab>"] = cmp.mapping(
+        function(fallback)
+            if cmp.visible() then
+                cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+            elseif require("luasnip").expand_or_jumpable() then
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
             else
                 fallback()
             end
-        end,
-        s = cmp.mapping.confirm({ select = true }),
-        c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-    }),
+        end, { "i", "s" }
+    ),
     -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ["<right>"] = cmp.mapping(
+        function(fallback)
+            if cmp.visible() then
+                cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+            elseif cmp.visible() and require("luasnip").expand_or_jumpable() then
+                vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+            else
+                fallback()
+            end
+        end, { "i", "s" }
+    ),
   }
 end
 

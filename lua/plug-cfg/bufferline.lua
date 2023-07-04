@@ -34,10 +34,18 @@ bufferline.setup({
         offsets = {
             {
                 filetype = "NvimTree",
-                text = "File Explorer",
-                text_align = "left",
+                text = function ()
+                    return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+                end,
+                text_align = "center",
                 separator = true
             }
         },
+        highlights = {
+            indicator_visible ={
+                fg = "#ff0000",
+                bg = "#ffffff"
+            }
+        }
     }
 })
