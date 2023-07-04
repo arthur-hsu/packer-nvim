@@ -56,7 +56,13 @@ require('packer').startup(function(use)
     use 'mg979/vim-visual-multi'                                -- 多重光標
     use 'mbbill/undotree'                                       -- 文件更動列表
     use {'ojroques/nvim-osc52'}                                 -- ssh複製
-    use { 'm00qek/baleia.nvim', tag = 'v1.3.0' }
+    use { 'm00qek/baleia.nvim', tag = 'v1.3.0' }                -- for ANSI decode
+    use {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
+    }
     -------------------------- LSP -----------------------------------------------
     --LSP install
     use {"williamboman/mason.nvim"}
