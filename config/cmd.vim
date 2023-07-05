@@ -10,8 +10,8 @@ nnoremap <silent>[t :BufferLineCyclePrev<CR>
 
 
 "vmap <silent><C-c> y:Oscyank<CR>
-imap <silent><C-b> <esc><C-o><C-o>
-nmap <silent><C-b> <C-o><C-o>
+imap <silent><C-z> <esc><C-o><C-o>
+nmap <silent><C-z> <C-o><C-o>
 
 nmap <silent><C-s> <esc>:w!<CR>
 imap <silent><C-s> <esc>:w!<CR>
