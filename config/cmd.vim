@@ -2,16 +2,19 @@
 command! Gdif GitGutterDiffOrig
 
 " visual模式下缩进代码
-vmap <silent>< <gv
-vmap <silent>> >gv
-nnoremap <silent>]t :BufferLineCycleNext<CR>
-nnoremap <silent>[t :BufferLineCyclePrev<CR>
+nnoremap <silent><TAB> >>
+vmap <silent><TAB> >gv
+nnoremap <silent><S-TAB> <<
+vmap <silent><S-TAB> <gv
+nnoremap <silent>ty :BufferLineCycleNext<CR>
+nnoremap <silent>tr :BufferLineCyclePrev<CR>
 
 
+nnoremap <silent><backspace> x
+vmap <silent><backspace> x
 
-"vmap <silent><C-c> y:Oscyank<CR>
-imap <silent><C-z> <esc><C-o><C-o>
-nmap <silent><C-z> <C-o><C-o>
+imap <silent><C-z> <esc><C-o>
+nmap <silent><C-z> <C-o>
 
 nmap <silent><C-s> <esc>:w!<CR>
 imap <silent><C-s> <esc>:w!<CR>
