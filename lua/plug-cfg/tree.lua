@@ -9,6 +9,7 @@ local function my_on_attach(bufnr)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
   vim.keymap.set('n', '<C-l>', api.node.open.vertical,                opts('Open: Vertical Split'))
+  vim.keymap.set('n', 'cd', api.tree.change_root_to_node,          opts('CD'))
 end
 
 

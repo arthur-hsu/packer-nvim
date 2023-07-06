@@ -4,11 +4,14 @@ let g:islinux = 0
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     let g:iswindows = 1
     map rc :w<CR> :e $HOME\nvim\init.vim<CR>
+    map test :w<CR> :e $HOME\test.py<CR>
+    map note :w<CR> :e $HOME\note<CR>
     map lua :w<CR> :e $HOME\nvim\lua\init.lua<CR>
     map <F6> :<esc>:source $HOME\nvim\init.vim<CR><CR>
 else
     let g:islinux = 1
     map rc :w<CR> :e $HOME/nvim/init.vim<CR>
+    map test :w<CR> :e $HOME\test.py<CR>
     map lua :w<CR> :e $HOME/nvim/lua/init.lua<CR>
     map <F6> :<esc>:source $HOME/nvim/lua/init.lua<CR><CR>
 endif
@@ -36,7 +39,7 @@ set undofile " Maintain undo history between sessions
 set undodir=$HOME/.undodir/nvim
 
 " 让Vim可视模式下选中的内容复制到系统剪贴板
-"set clipboard=unnamed
+set clipboard=unnamed
 "set clipboard+=unnamedplus
 
 set wrap "設置換行

@@ -8,6 +8,7 @@ nnoremap <silent><S-TAB> <<
 vmap <silent><S-TAB> <gv
 nnoremap <silent>ty :BufferLineCycleNext<CR>
 nnoremap <silent>tr :BufferLineCyclePrev<CR>
+nnoremap <silent>td :bd<CR>
 
 
 nnoremap <silent><backspace> x
