@@ -1,5 +1,5 @@
 function python()
-    if vim.loop.os_uname().sysname == 'linux' then
+    if vim.loop.os_uname().sysname == 'Linux' then
         return "python3 -u"
     elseif vim.loop.os_uname().sysname == 'Windows_NT' then
         return "python -u"
@@ -9,7 +9,7 @@ end
 
 require('code_runner').setup({
     -- choose default mode (valid term, tab, float, toggle)
-    mode = "term",
+    mode = "tab",
     -- Focus on runner window(only works on toggle, term and tab mode)
     focus = true,
     -- startinsert (see ':h inserting-ex')

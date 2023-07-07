@@ -6,9 +6,14 @@ nnoremap <silent><TAB> >>
 vmap <silent><TAB> >gv
 nnoremap <silent><S-TAB> <<
 vmap <silent><S-TAB> <gv
+
+" exit term
+tnoremap <silent><Esc> <C-\><C-n>
+tnoremap <silent>td <C-\><C-n>:bd!<CR>
+" tab buffer change
 nnoremap <silent>ty :BufferLineCycleNext<CR>
 nnoremap <silent>tr :BufferLineCyclePrev<CR>
-nnoremap <silent>td :bd<CR>
+nnoremap <silent>td :bd!<CR>
 
 
 nnoremap <silent><backspace> x
