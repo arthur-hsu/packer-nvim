@@ -62,7 +62,7 @@ cmp.setup.cmdline(':', {
         { name = 'path' },
         { name = 'cmdline',
           option={
-            ignore_cmds = {'qall','quit','write', 'Man', '!'},
+            ignore_cmds = {'term','terminal','qall','quit','write', 'Man', '!'},
           },
         }
     }),

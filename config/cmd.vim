@@ -9,11 +9,52 @@ vmap <silent><S-TAB> <gv
 
 " exit term
 tnoremap <silent><Esc> <C-\><C-n>
-tnoremap <silent>td <C-\><C-n>:bd!<CR>
 " tab buffer change
 nnoremap <silent>ty :BufferLineCycleNext<CR>
 nnoremap <silent>tr :BufferLineCyclePrev<CR>
 nnoremap <silent>td :bd!<CR>
+tnoremap <silent>ty <C-\><C-n>:BufferLineCycleNext<CR>
+tnoremap <silent>tr <C-\><C-n>:BufferLineCyclePrev<CR>
+tnoremap <silent>td <C-\><C-n>:bd!<CR>
+
+nnoremap <silent><leader>1 <cmd>BufferLineGoToBuffer 1<cr>
+nnoremap <silent><leader>2 <cmd>BufferLineGoToBuffer 2<cr>
+nnoremap <silent><leader>3 <cmd>BufferLineGoToBuffer 3<cr>
+nnoremap <silent><leader>4 <cmd>BufferLineGoToBuffer 4<cr>
+nnoremap <silent><leader>5 <cmd>BufferLineGoToBuffer 5<cr>
+nnoremap <silent><leader>6 <cmd>BufferLineGoToBuffer 6<cr>
+nnoremap <silent><leader>7 <cmd>BufferLineGoToBuffer 7<cr>
+nnoremap <silent><leader>8 <cmd>BufferLineGoToBuffer 8<cr>
+nnoremap <silent><leader>9 <cmd>BufferLineGoToBuffer 9<cr>
+nnoremap <silent><leader>$ <cmd>BufferLineGoToBuffer -1<cr>
+
+tnoremap <silent><leader>1 <C-\><C-n><cmd>BufferLineGoToBuffer 1<cr>
+tnoremap <silent><leader>2 <C-\><C-n><cmd>BufferLineGoToBuffer 2<cr>
+tnoremap <silent><leader>3 <C-\><C-n><cmd>BufferLineGoToBuffer 3<cr>
+tnoremap <silent><leader>4 <C-\><C-n><cmd>BufferLineGoToBuffer 4<cr>
+tnoremap <silent><leader>5 <C-\><C-n><cmd>BufferLineGoToBuffer 5<cr>
+tnoremap <silent><leader>6 <C-\><C-n><cmd>BufferLineGoToBuffer 6<cr>
+tnoremap <silent><leader>7 <C-\><C-n><cmd>BufferLineGoToBuffer 7<cr>
+tnoremap <silent><leader>8 <C-\><C-n><cmd>BufferLineGoToBuffer 8<cr>
+tnoremap <silent><leader>9 <C-\><C-n><cmd>BufferLineGoToBuffer 9<cr>
+tnoremap <silent><leader>$ <C-\><C-n><cmd>BufferLineGoToBuffer -1<cr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 nnoremap <silent><backspace> x
