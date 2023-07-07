@@ -1,3 +1,13 @@
+function python()
+    print( vim.loop.os_uname().sysname)
+    if vim.loop.os_uname().sysname == 'Linux' then
+        return "python3 -u"
+    elseif vim.loop.os_uname().sysname == 'Windows_NT' then
+        return "python -u"
+    end
+end
+
+
 require('code_runner').setup({
     -- choose default mode (valid term, tab, float, toggle)
     mode = "term",
@@ -59,7 +69,7 @@ require('code_runner').setup({
             "-o $fileNameWithoutExt &&",
             "$dir/$fileNameWithoutExt",
         }, 
-        python = "python -u",
+        python = python(),
         sh = "bash",
         rust = {
             "cd $dir &&",
