@@ -1,21 +1,17 @@
-let g:iswindows = 0
-let g:islinux = 0
-
 if(has("win32") || has("win64") || has("win95") || has("win16"))
-    let g:iswindows = 1
     map rc :w<CR> :e $HOME\nvim\init.vim<CR>
     map test :w<CR> :e $HOME\test.py<CR>
-    map note :w<CR> :e $HOME\note<CR>
+    map note :w<CR> :e $HOME\note.txt<CR>
     map lua :w<CR> :e $HOME\nvim\lua\init.lua<CR>
     map <F6> :<esc>:source $HOME\nvim\init.vim<CR><CR>
 else
-    let g:islinux = 1
     map rc :w<CR> :e $HOME/nvim/init.vim<CR>
     map test :w<CR> :e $HOME/test.py<CR>
+    map note :w<CR> :e $HOME/note.txt<CR>
     map lua :w<CR> :e $HOME/nvim/lua/init.lua<CR>
     map <F6> :<esc>:source $HOME/nvim/lua/init.lua<CR><CR>
 endif
-autocmd BufWritePost $HOME\nvim\init.vim source $HOME\nvim\init.vim
+autocmd BufWritePost $HOME/nvim/init.vim source $HOME/nvim/init.vim
 
 " 在重新開啟檔案後保留遊標位置
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -40,7 +36,7 @@ set undodir=$HOME/.undodir/nvim
 
 " 让Vim可视模式下选中的内容复制到系统剪贴板
 set clipboard=unnamed
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
 
 set wrap "設置換行
 set fileformat=unix "設置以unix的格式保存文件

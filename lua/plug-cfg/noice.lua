@@ -1,3 +1,12 @@
+
+require('notify').setup({
+    user_config = {
+        fps = 60,
+        timeout = 3000,
+    }
+})
+
+
 require("noice").setup(
 {
     cmdline = {
