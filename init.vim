@@ -36,7 +36,7 @@ set undodir=$HOME/.undodir/nvim
 
 " 让Vim可视模式下选中的内容复制到系统剪贴板
 set clipboard=unnamed
-"set clipboard+=unnamedplus
+set clipboard+=unnamedplus
 
 set wrap "設置換行
 set fileformat=unix "設置以unix的格式保存文件
