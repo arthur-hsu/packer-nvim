@@ -1,13 +1,13 @@
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     map rc :w<CR> :e $HOME\nvim\init.vim<CR>
-    map test :w<CR> :e $HOME\test.py<CR>
-    map note :w<CR> :e $HOME\note.txt<CR>
+    map test :w<CR> :e $HOME\.test.py<CR>
+    map note :w<CR> :e $HOME\.note.txt<CR>
     map lua :w<CR> :e $HOME\nvim\lua\init.lua<CR>
     map <F6> :<esc>:source $HOME\nvim\init.vim<CR><CR>
 else
     map rc :w<CR> :e $HOME/nvim/init.vim<CR>
-    map test :w<CR> :e $HOME/test.py<CR>
-    map note :w<CR> :e $HOME/note.txt<CR>
+    map test :w<CR> :e $HOME/.test.py<CR>
+    map note :w<CR> :e $HOME/.note.txt<CR>
     map lua :w<CR> :e $HOME/nvim/lua/init.lua<CR>
     map <F6> :<esc>:source $HOME/nvim/lua/init.lua<CR><CR>
 endif
