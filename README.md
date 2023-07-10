@@ -8,7 +8,7 @@ node.js
 
 ## On linux
 - cmd execute
-'''shell
+,,, shell
 
 cd
 mkdir undodir undodir/vim
@@ -18,4 +18,4 @@ set runtimepath+=$HOME/.vim         " let vim also search vim files located in $
 
 source $HOME/.vim/vimrc          " source all settings from $HOME/.vim/vimrc
 
-'''
+,,,
