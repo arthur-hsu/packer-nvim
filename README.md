@@ -7,7 +7,7 @@ node.js
 
 
 ## On linux
-
+- cmd execute
 '''shell
 
 cd
