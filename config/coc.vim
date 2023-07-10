@@ -6,7 +6,7 @@ let g:coc_global_extensions = [
 "\ 'coc-jedi',
 "\ 'coc-git',
 \ 'coc-marketplace',
-"\ 'coc-pyright',
+\ 'coc-pyright',
 \ 'coc-vimlsp',
 \ 'coc-snippets'
 \ ]
