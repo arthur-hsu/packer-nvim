@@ -42,13 +42,13 @@ Plug 'https://github.com/fcpg/vim-osc52' " <C-c>遠端複製到本地
 Plug 'https://github.com/mbbill/undotree'
 Plug 'https://github.com/MTDL9/vim-log-highlighting'
 Plug 'neoclide/jsonc.vim'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+"Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'https://github.com/vim-python/python-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main'  }
 "not enable
 "Plug 'ycm-core/YouCompleteMe'
-"Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
+Plug 'jaxbot/semantic-highlight.vim' " 語法高亮
 "Plug 'sheerun/vim-polyglot'
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
@@ -58,7 +58,7 @@ set nu rnu  " 啟用相對行術
 set t_Co=256
 set termguicolors
 set background=dark "設置背景色
-colo zephyr
+colo dark_plus
 set buftype=""
 set nocompatible              " be iMproved, required
 filetype off                 " required
@@ -83,17 +83,17 @@ highlight GitGutterDeleteLineNr guifg=lightred
 highlight GitGutterChangeDeleteLineNr guifg=lightred 
 
 
-source $HOME/nvim/config/coc.vim 
-source $HOME/nvim/config/rainbow.vim 
-source $HOME/nvim/config/cmd.vim " 自訂CMD 目錄
-source $HOME/nvim/config/multi_line.vim
-source $HOME/nvim/config/airline.vim
-source $HOME/nvim/config/ale.vim
-source $HOME/nvim/config/semshi.vim
-source $HOME/nvim/config/nerdtree.vim
-source $HOME/nvim/config/indent.vim
-"source $HOME/nvim/config/YouCompleteMe.vim 
-"source $HOME/nvim/config/treesitter.vim
+source $HOME/.vim/config/coc.vim 
+source $HOME/.vim/config/rainbow.vim 
+source $HOME/.vim/config/cmd.vim " 自訂CMD 目錄
+source $HOME/.vim/config/multi_line.vim
+source $HOME/.vim/config/airline.vim
+source $HOME/.vim/config/ale.vim
+source $HOME/.vim/config/nerdtree.vim
+source $HOME/.vim/config/indent.vim
+"source $HOME/.vim/config/semshi.vim
+"source $HOME/.vim/config/YouCompleteMe.vim 
+"source $HOME/.vim/config/treesitter.vim
 "autocmd VimEnter :TSBufToggle highlight
 
 let g:python_highlight_all = 1
@@ -149,4 +149,4 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " semantic
 "let g:semanticEnableFileTypes = ['javascript', 'vim', 'python']
-"noremap <Leader>s :SemanticHighlight<cr>
+noremap <Leader>s :SemanticHighlight<cr>

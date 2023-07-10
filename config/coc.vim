@@ -2,11 +2,11 @@
 let g:coc_config_home = "~/nvim/config/" " :C 可以直接進入coc-setting.json
 let g:coc_global_extensions = [
 \ 'coc-lists',
-"\ 'coc-python',
-\ 'coc-jedi',
+\ 'coc-python',
+"\ 'coc-jedi',
 "\ 'coc-git',
 \ 'coc-marketplace',
-\ 'coc-pyright',
+"\ 'coc-pyright',
 \ 'coc-vimlsp',
 \ 'coc-snippets'
 \ ]
