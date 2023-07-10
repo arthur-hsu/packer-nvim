@@ -7,7 +7,7 @@ node.js
 
 
 ## On linux
-shell'''  
+'''shell
 cd
 mkdir undodir undodir/vim
 vim .vimrc
