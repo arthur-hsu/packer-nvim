@@ -6,12 +6,13 @@ node.js
 
 
 
-On linux
-  
+## On linux
+shell'''  
 cd
-
-nvim ~/.config/nvim/init.vim
+mkdir undodir undodir/vim
+vim .vimrc
 
 set runtimepath+=$HOME/.vim         " let vim also search vim files located in $HOME/.vim
 
 source $HOME/.vim/vimrc          " source all settings from $HOME/.vim/vimrc
+'''
