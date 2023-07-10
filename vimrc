@@ -65,7 +65,7 @@ filetype off                 " required
 filetype plugin indent on    " required
 
 set undofile " Maintain undo history between sessions
-set undodir=$HOME/.undodir/nvim
+set undodir=$HOME/.undodir/vim
 
 " git
 set updatetime=300
