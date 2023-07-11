@@ -17,7 +17,7 @@ Terminal字體換成帶有`NERD`的
 ```shell
 cd
 git clone https://github.com/aaa890177/nvim.git
-pip3 install neovim
+pip install neovim
 npm install neovim
 ```
 - Install packer.nvim
